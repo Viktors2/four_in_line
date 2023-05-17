@@ -1,10 +1,13 @@
 const board = document.querySelector(".game_board");
 this.template = document.querySelector("#template_cell");
 
-for (let i = 0; i < 100; i++) {
-  const newElement = this.template.content.firstElementChild.cloneNode(true);
-  newElement.dataset.id = i;
-  this.template.parentElement.append(newElement);
+for (let y = 0; y < 10; y++) {
+  for (let x = 0; x < 10; x++) {
+    const new_cell = template.content.firstElementChild.cloneNode(true);
+    new_cell.dataset.x = x;
+    new_cell.dataset.y = y;
+    board.append(new_cell);
+  }
 }
 
 let symbol = "x";
@@ -31,7 +34,7 @@ reset.addEventListener("click", resetHandle);
 
 function resetHandle() {
   console.log("reset");
-  const cells = document.querySelectorAll(".cell"); // get all cells
+  const cells = document.querySelectorAll(".cell");
   for (const cell of cells) {
     cell.textContent = "";
   }

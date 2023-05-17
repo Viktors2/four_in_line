@@ -4,14 +4,14 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tic tac toe</title>
+    <title>Four in line</title>
     <link rel="stylesheet" href="/part_2/four_in_line/style.css" />
   </head>
   <body>
     <div class="center">
-      <h2>Tic tac toe game</h2>
+      <h2>Four in line game</h2>
       <div class="game_board">
-        <template><div class="cell"></div></template>
+        <template id="template_cell"><div class="cell"></div></template>
       </div>
 
       <button class="reset">Reset</button>
@@ -27,27 +27,6 @@
         <button class="reset_game">Reset</button>
       </div>
     </div>
-    <!-- 
-    1. ✅ Ievietot "x" pie klikšķa uz šūnas
-      A. ✅ Pirmajai šunai pārtver klikšķa notikumu.
-      B. ✅ Pārtvert klikšķi -> pārbaudīt
-      C. ✅ Ievietot šūnā saturu "x"
-    2. ✅ Pie atkārtotiem klikškiem ievietot nākošo vērtību "o" vai "x";
-    3. ✅ Neļaut ievietot vērtību šunās kuras ir jau aizņemtas;
-    4. ✅ Uzpiežot uz pogas ar klasi "reset" laukumā ierakstītām vērtībām ir jāizdzēšās un
-    nākošajam gājienam pēc reset darbības ir jābūt atkal spēlētājam ar "x" simbolu
-      A: ✅ pārtvert klikški uz reset pogas
-      B: ✅ nodzēst šunu teksta saturu
-      C: ✅ attiestadīt symbol mainīgo uz noklusēto vērtību;
-    5. ✅ izveidot validācijas (uzvarētāja noteikšanas) funckciju un izsaukt to īstajā brīdī
-    6. ✅ Izdomāt uzvarētāja noteikšanas loģiku
-    7. ✅ Realizēt uzvarētāja noteikšanas loģiku kodā.
-    8. ✅ Paziņot par uzvarētāju izmantojot sagatavoto elementu ar klasi "popup"
-
-    9. Spēles gaitu saglabāt lokālajā atmiņā
-    10. Pārlādējot lapu, ļaut turpināt spēli no tās pašas vietas
-    (visi iepriekšējie gājieni ir vajadzīgajās šūnās)
-   -->
     <script src="/part_2/four_in_line/script.js"></script>
   </body>
 </html>

@@ -1,6 +1,5 @@
 const board = document.querySelector(".game_board");
 this.template = document.querySelector("#template_cell");
-const cells = document.querySelectorAll(".cell");
 
 for (let i = 0; i < 100; i++) {
   const newElement = this.template.content.firstElementChild.cloneNode(true);
@@ -11,12 +10,12 @@ for (let i = 0; i < 100; i++) {
 let symbol = "x";
 board.addEventListener("click", boardClickHandle);
 
-function boardClickHandle(event) {
-  if (!event.target.classList.contains("cell")) {
+function boardClickHandle(e) {
+  if (!e.target.classList.contains("cell")) {
     return;
   }
 
-  clickHandle.bind(event.target)();
+  clickHandle.bind(e.target)();
 }
 
 function clickHandle() {
@@ -24,4 +23,17 @@ function clickHandle() {
     return;
   }
   this.textContent = symbol;
+  symbol = symbol === "x" ? "o" : "x";
+}
+
+const reset = document.querySelector(".reset");
+reset.addEventListener("click", resetHandle);
+
+function resetHandle() {
+  console.log("reset");
+  const cells = document.querySelectorAll(".cell"); // get all cells
+  for (const cell of cells) {
+    cell.textContent = "";
+  }
+  symbol = "x";
 }

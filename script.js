@@ -23,6 +23,8 @@ board.children[i + 1].style.background = "lightblue";
 board.children[i - 1].style.background = "lightpink";
 
 let symbol = "x";
+let moves = [];
+let referee = new Referee();
 
 // where players can put their symbols (board.children)
 // clickedHandle function
@@ -36,7 +38,12 @@ let symbol = "x";
 
 function clickHandle() {
   const index = Number(this.dataset.index);
-  if (index < 90 && board.children[index + 10].textContent == "") {
+  const x = Number(this.dataset.x);
+  const y = Number(this.dataset.y);
+  if (moves.hasOwnProperty(index)) {
+    return;
+  }
+  if (index < 90 && !moves.hasOwnProperty(index + 10)) {
     return;
   }
   this.textContent = symbol;
@@ -52,6 +59,11 @@ function clickHandle() {
       this.dataset.index
   );
   symbol = symbol === "x" ? "o" : "x";
+  moves[index] = symbol;
+
+  if (referee.checkWinner(moves, symbol, index, x, y)) {
+    console.log("Player " + symbol + " has won the game!");
+  }
 }
 
 const reset = document.querySelector(".reset");

@@ -19,6 +19,34 @@ class Referee {
     ) {
       return true;
     }
+    if (
+      symbol == this.getSymbol(y + 1, x) &&
+      symbol == this.getSymbol(y + 2, x) &&
+      symbol == this.getSymbol(y + 3, x)
+    ) {
+      return true;
+    }
+    if (
+      symbol == this.getSymbol(y - 1, x) &&
+      symbol == this.getSymbol(y - 2, x) &&
+      symbol == this.getSymbol(y - 3, x)
+    ) {
+      return true;
+    }
+    if (
+      symbol == this.getSymbol(y + 1, x + 1) &&
+      symbol == this.getSymbol(y + 2, x + 2) &&
+      symbol == this.getSymbol(y + 3, x + 3)
+    ) {
+      return true;
+    }
+    if (
+      symbol == this.getSymbol(y - 1, x - 1) &&
+      symbol == this.getSymbol(y - 2, x - 2) &&
+      symbol == this.getSymbol(y - 3, x - 3)
+    ) {
+      return true;
+    }
 
     return false;
   }

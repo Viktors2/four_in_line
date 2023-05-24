@@ -38,8 +38,8 @@ let referee = new Referee();
 
 function clickHandle() {
   const index = Number(this.dataset.index);
-  const x = Number(this.dataset.x);
-  const y = Number(this.dataset.y);
+  const x = this.dataset.x;
+  const y = this.dataset.y;
   if (moves.hasOwnProperty(index)) {
     return;
   }

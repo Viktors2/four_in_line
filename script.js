@@ -76,5 +76,6 @@ function resetHandle() {
   for (const cell of cells) {
     cell.textContent = "";
   }
-  symbol = "x";
+  count = "0";
+  moves = {};
 }

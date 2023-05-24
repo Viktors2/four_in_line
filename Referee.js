@@ -1,9 +1,10 @@
 class Referee {
-  checkWinner(moves, symbol, index) {
+  checkWinner(moves, index) {
+    const symbol = moves[index];
     this.moves = moves;
     const x = index % 10;
     const y = (index - x) / 10;
-
+    ///Right diagonal
     if (
       symbol == this.getSymbol(y, x + 1) &&
       symbol == this.getSymbol(y, x + 2) &&
@@ -11,7 +12,7 @@ class Referee {
     ) {
       return true;
     }
-
+    ///Left diagonal
     if (
       symbol == this.getSymbol(y, x - 1) &&
       symbol == this.getSymbol(y, x - 2) &&
@@ -19,6 +20,7 @@ class Referee {
     ) {
       return true;
     }
+    ///horizontal
     if (
       symbol == this.getSymbol(y + 1, x) &&
       symbol == this.getSymbol(y + 2, x) &&
@@ -26,24 +28,11 @@ class Referee {
     ) {
       return true;
     }
+    ///vertical
     if (
       symbol == this.getSymbol(y - 1, x) &&
       symbol == this.getSymbol(y - 2, x) &&
       symbol == this.getSymbol(y - 3, x)
-    ) {
-      return true;
-    }
-    if (
-      symbol == this.getSymbol(y + 1, x + 1) &&
-      symbol == this.getSymbol(y + 2, x + 2) &&
-      symbol == this.getSymbol(y + 3, x + 3)
-    ) {
-      return true;
-    }
-    if (
-      symbol == this.getSymbol(y - 1, x - 1) &&
-      symbol == this.getSymbol(y - 2, x - 2) &&
-      symbol == this.getSymbol(y - 3, x - 3)
     ) {
       return true;
     }
